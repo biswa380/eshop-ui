@@ -1,0 +1,26 @@
+<div class="container row">
+<div class="container-biswa col-md-4">
+    <span class="title">Category List</span><mat-icon class="small-icon" (click)="editEnable()"> border_color</mat-icon>
+    <div *ngFor="let category of categories">
+        <div class="level1"> <span class="l1span">{{category.name}}</span> 
+            <mat-icon class="small-icon" [hidden]="hideediticon" (click)="editCategory(category.id)"> border_color</mat-icon>
+            <mat-icon class="small-icon" [hidden]="hideediticon" (click)="deleteCategory(category.id)">delete</mat-icon>
+            <div *ngFor="let child of category.children">
+                <div class="level2"><span class="l2span">{{child.name}}</span>
+                    <mat-icon class="small-icon" [hidden]="hideediticon" (click)="editCategory(child.id)"> border_color</mat-icon>
+                    <mat-icon class="small-icon" [hidden]="hideediticon" (click)="deleteCategory(child.id)">delete</mat-icon>
+                    <div *ngFor="let innerchild of child.children">
+                        <div class="level3">{{innerchild.name}}</div>
+                        <mat-icon class="small-icon" [hidden]="hideediticon" (click)="editCategory(innerchild.id)"> border_color</mat-icon>
+                        <mat-icon class="small-icon" [hidden]="hideediticon" (click)="deleteCategory(innerchild.id)">delete</mat-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-8">
+<app-category-form [editCategoryData]="categoryToEdit"></app-category-form>
+</div>
+</div>
+

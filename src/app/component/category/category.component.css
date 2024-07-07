@@ -1,0 +1,38 @@
+div {
+    padding-bottom: 5px;
+}
+.container-biswa {
+    padding-left: 10px;
+    padding-top: 10px;
+    border: 5px;
+    background-color: beige;
+    width: 20%;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.l1span {
+    font-size: 20px;
+    background-color: bisque;
+    cursor: pointer;
+}
+.l2span {
+    font-size: 18px;
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+.level2 {
+    padding-left: 20px;
+}
+
+.level3 {
+    padding-left: 30px;
+}
+
+.small-icon {
+    font-size: 15px;
+    cursor: pointer;
+}

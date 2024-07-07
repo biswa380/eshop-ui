@@ -1,0 +1,13 @@
+.l2span {
+    font-size: 18px;
+    background-color: antiquewhite;
+    font-weight: 500;
+}
+
+.form-body {
+    padding-left: 10px;
+    padding-top: 10px;
+    border: 5px;
+    background-color: beige;
+    width: 50%;
+}

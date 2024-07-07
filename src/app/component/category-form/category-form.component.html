@@ -1,0 +1,19 @@
+<div class="container form-body">
+    <span class="l2span">Add Category</span>
+    <form #categoryForm="ngForm" (ngSubmit)="submitForm(categoryForm)">
+        <div class="form-group">
+            <label for="id">Category ID</label>
+            <input type="text" class="form-control" id="id" required [(ngModel)]="categoryFormData.id" name="id">
+
+            <label for="name">Category Name</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="categoryFormData.name" name="name">
+            
+            <label for="parentCategory">Parent Category</label>
+            <select class="form-control" id="parentCategory" name="parentCategory" [(ngModel)]="categoryFormData.parentCategory" required>
+            <option *ngFor="let category of categories" [value]="category.categoryId" >{{category.categoryName}}</option>
+            </select>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>

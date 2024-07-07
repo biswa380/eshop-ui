@@ -1,0 +1,8 @@
+<div *ngFor="let child of childCategories">
+    <div class="icon-button" ng-hide="dynamicDisplay"  (click)="getChildForParent(child.categoryId);">
+        {{child.categoryId}}  {{child.categoryName}}
+        <div *ngIf="child.isParent">
+            <app-dynamic-tree [childCategories] = "childList" ></app-dynamic-tree>
+        </div>
+    </div>
+</div>
