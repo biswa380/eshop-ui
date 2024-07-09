@@ -10,7 +10,10 @@ import { TokenInterceptorInterceptor } from './interceptor/token-interceptor.int
 import { DynamicTreeComponent } from './component/dynamic-tree/dynamic-tree.component';
 import { CategoryFormComponent } from './component/category-form/category-form.component';
 import { FormsModule } from '@angular/forms';
-import { MatIconModule } from '@angular/material';
+import { MatIconModule, MatSnackBarModule } from '@angular/material';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CustomDialogComponent } from './component/custom-dialog/custom-dialog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -19,14 +22,19 @@ import { MatIconModule } from '@angular/material';
     LoginComponent,
     CategoryComponent,
     DynamicTreeComponent,
-    CategoryFormComponent
+    CategoryFormComponent,
+    CustomDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule,
+    
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorInterceptor, multi: true}

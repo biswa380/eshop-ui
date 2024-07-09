@@ -40,11 +40,15 @@ export class CategoryComponent implements OnInit {
     this.categoryToEdit = categoryId;
   }
 
+  confirmationMessage: string="Category deleted successfully.";
   deleteCategory(categoryId:string) {
     this.categoryService.deleteCategory(categoryId).subscribe(
       res => {
         console.log(res);
+        this.confirmationMessage=res;
       }
     )
+    alert(this.confirmationMessage)
+    window.location.reload()
   }
 }

@@ -45,6 +45,7 @@ export class CategoryFormComponent implements OnInit, OnChanges {
     this.categoryFormData.parentCategory = value;
   }
 
+  confirmationMessage: string="Data saved successfully.";
   submitForm(form: any) : void {
     if (form.valid) {
       this.savedCategory.categoryId=this.categoryFormData.id;
@@ -53,8 +54,10 @@ export class CategoryFormComponent implements OnInit, OnChanges {
 
       console.log('Form data:', this.savedCategory);
       this.categoryService.saveCategoryForm(this.savedCategory).subscribe(
-        res => console.log(res)
+        res => this.confirmationMessage=res
       );
+      alert(this.confirmationMessage)
+      window.location.reload()
       this.categoryFormData = new CategoryFormData("", "", "");
     }
   }
